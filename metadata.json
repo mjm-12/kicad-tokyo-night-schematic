@@ -1,0 +1,30 @@
+{
+    "$schema": "https://go.kicad.org/pcm/schemas/v2",
+    "name": "Tokyo Night (Schematic)",
+    "description": "Tokyo Night color theme for the KiCad schematic editor. PCB, 3D viewer and GerbView colors stay at KiCad defaults.",
+    "description_full": "A dark color theme for the KiCad schematic editor, built on the Tokyo Night palette by enkia (night variant, background #1a1b26).\n\nThe theme covers the schematic editor only. The PCB editor, 3D viewer and GerbView sections hold near-default KiCad colors.\n\nAfter installing, select the theme in Preferences > Schematic Editor > Colors.",
+    "identifier": "com.github.mjm-12.kicad-tokyo-night-schematic",
+    "type": "colortheme",
+    "author": {
+        "name": "Hayata Yamamoto",
+        "contact": {
+            "github": "https://github.com/Mjm-12"
+        }
+    },
+    "license": "MIT",
+    "resources": {
+        "homepage": "https://github.com/Mjm-12/kicad-tokyo-night-schematic"
+    },
+    "tags": [
+        "tokyo-night",
+        "dark",
+        "schematic"
+    ],
+    "versions": [
+        {
+            "version": "1.0.0",
+            "status": "stable",
+            "kicad_version": "10.0"
+        }
+    ]
+}
