@@ -20,8 +20,6 @@ The sheet is the top board of [Anthracite](https://github.com/trope-oshw/anthrac
 
 KiCad stores net class wire colors in the project file (`.kicad_pro`), and this theme does not set them. For wires that match the theme, pick from the Tokyo Night palette below. The names follow [tokyonight.nvim](https://github.com/folke/tokyonight.nvim).
 
-![Tokyo Night palette for net class wires](screenshots/netclass-palette.png)
-
 | Swatch | Color | Hex |
 | --- | --- | --- |
 | ![red](screenshots/swatches/red.png) | red | `#f7768e` |
