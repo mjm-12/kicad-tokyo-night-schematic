@@ -14,7 +14,27 @@ KiCad default, same sheet and framing:
 
 ![KiCad default](screenshots/kicad-default.png)
 
-The sheet is the top board of [Anthracite](https://github.com/trope-oshw/anthracite), exported with `kicad-cli sch export svg --theme`. The orange, teal and pink wires in both images come from net class colors in that project, and KiCad draws them over the theme's wire color.
+The sheet is the top board of [Anthracite](https://github.com/trope-oshw/anthracite), exported with `kicad-cli sch export svg --theme`. The orange, teal and pink wires in both images come from net class colors in that project, and KiCad draws them over the theme's wire color. See [Net class colors](#net-class-colors) for the values.
+
+## Net class colors
+
+![Net class colors on the Anthracite bottom board](screenshots/netclass-example.png)
+
+The Anthracite bottom board (MCU section above, Tokyo Night theme) assigns these wire colors through net classes:
+
+| Net class | Nets | Wire color |
+| --- | --- | --- |
+| `Default` | Everything not assigned elsewhere | none, `rgba(0, 0, 0, 0.000)`; wires use the theme color |
+| `power` | Supply rails (patterns `+*`, `-*`) and supply-side nodes | `#f7768e`, `rgb(247, 118, 142)` |
+| `GND` | `GNDPWR` (pattern) | `#848484`, `rgb(132, 132, 132)` |
+| `GPIO_Input` | MCU input pins: switch positions, `PA*`/`PB*`/`PF*` inputs | `#73daca`, `rgb(115, 218, 202)` |
+| `GPIO_Output` | MCU outputs: mode and control lines to the level shifters, LED drives | `#ff9e64`, `rgb(255, 158, 100)` |
+| `USART` | UART TX/RX between the MCU, debug connector and expansion header | `#bb9af7`, `rgb(187, 154, 247)` |
+| `TIM` | Timer output from `PA7` through a buffer to the expansion header | `#e0af68`, `rgb(224, 175, 104)` |
+
+The five colored classes use colors from the Tokyo Night palette: red, orange, teal, purple and yellow. The `GND` gray does not appear in the palette. The top board uses the same colors under the names `Input` (teal) and `Control` (orange).
+
+The project file (`.kicad_pro`) stores these colors, and the theme file does not, so installing this theme leaves your wires unchanged. To reuse the palette, open **File > Schematic Setup > Project > Net Classes**, set the **Color** column for each class, and assign nets with the pattern table on the same page or with net class directive labels.
 
 ## Install
 
